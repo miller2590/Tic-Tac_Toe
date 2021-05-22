@@ -31,3 +31,21 @@ void create_board() {
 
   std::cout << "     |     |     \n\n";
 }
+
+bool first_move() {
+
+  std::cout << "\nWho will go first?\n";
+  std::cout << "'1', for player 1.\n";
+  std::cout << "'2', for player 2.\n";
+
+  char answer;
+  std::cin >> answer;
+
+  if (answer == '1') {
+
+    return true;
+    
+  }
+  return false;
+  
+}
