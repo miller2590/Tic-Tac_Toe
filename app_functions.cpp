@@ -1,6 +1,10 @@
 #include "app_functions.hpp"
 #include <iostream>
-#include <vector>
+#include <array>
+
+char grid[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+int player = 1;
+int position = 0;
 
 void welcome() {
   std::cout << "===========\n";
@@ -8,9 +12,20 @@ void welcome() {
   std::cout << "===========\n\n";
 
   std::cout << "It's simple, get three in a row and you win!\n\n";
+  std::cout << "This is how you will choose your positions!\n\n";
+
+  std::cout << "     |     |      \n";
+  std::cout << "  0  |  1  |  2   \n";
+  std::cout << "_____|_____|_____ \n";
+  std::cout << "     |     |      \n";
+  std::cout << "  3  |  4  |  5   \n";
+  std::cout << "_____|_____|_____ \n";
+  std::cout << "     |     |      \n";
+  std::cout << "  6  |  7  |  8   \n";
+  std::cout << "     |     |      \n\n";
+  
 }
 
-std::vector<int> grid = {0, 1, 2, 3, 4, 5, 6, 7, 8};
 
 void create_board() {
 
@@ -30,22 +45,4 @@ void create_board() {
             << "\n";
 
   std::cout << "     |     |     \n\n";
-}
-
-bool first_move() {
-
-  std::cout << "\nWho will go first?\n";
-  std::cout << "'1', for player 1.\n";
-  std::cout << "'2', for player 2.\n";
-
-  char answer;
-  std::cin >> answer;
-
-  if (answer == '1') {
-
-    return true;
-    
-  }
-  return false;
-  
 }
