@@ -93,10 +93,10 @@ void create_grid() {
 
 void change_position() {
 
-  std::cout << "Player" << player << "'s turn. Enter 1-9: ";
+  std::cout << "Player " << player << "'s turn. Enter 1-9: ";
   std::cout << " ";
 
-  while (!(std::cin >> player)) {
+  while (!(std::cin >> position)) {
 
     std::cout << "Please enter a valid number.\n";
     std::cin.clear();
