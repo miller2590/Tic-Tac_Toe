@@ -4,5 +4,7 @@
 int main() {
 
   welcome();
+  change_position;
+  end_game();
   
 }

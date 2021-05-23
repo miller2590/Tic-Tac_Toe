@@ -91,8 +91,6 @@ void create_grid() {
   std::cout << "     |     |     \n\n";
 }
 
-/* set position function using while loop, check if positon is a number.
-Also check if position has already been chosen.  */
 void change_position() {
 
   std::cout << "Player" << player << "'s turn. Enter 1-9: ";
@@ -103,18 +101,15 @@ void change_position() {
     std::cout << "Please enter a valid number.\n";
     std::cin.clear();
     std::cin.ignore();
-    
   }
 
-  while (grid[position-1] != " ") {
+  while (grid[position - 1] != " ") {
 
     std::cout << "That space is taken!\n";
     std::cout << "Player " << player << "'s turn Enter 1-9: ";
     std::cout << "\n";
     std::cin >> position;
-    
   }
-  
 }
 
 void update_board() {
@@ -135,18 +130,37 @@ void change_player() {
 
   if (player == 1) {
 
-    player ++;
-    
+    player++;
+
   }
-  
+
   else {
 
-    player --;
-    
+    player--;
   }
-
 }
 
-// Create take turn function
+void player_turn() {
 
-// Create end game function
+  while (!is_winner() && !full_board()) {
+
+    change_position();
+    update_board();
+    change_player();
+    create_grid();
+  }
+}
+
+void end_game() {
+
+  if (is_winner()) {
+
+    std::cout << "We have a winner!\n";
+
+  }
+
+  else if (full_board()) {
+
+    std::cout << "There is a tie!\n";
+  }
+}
