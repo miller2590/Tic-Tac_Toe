@@ -1,6 +1,5 @@
 #include "app_functions.hpp"
 #include <iostream>
-#include <array>
 
 std::string grid[9] = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
 int player = 1;
@@ -24,13 +23,12 @@ void welcome() {
   std::cout << "     |     |      \n";
   std::cout << "  7  |  8  |  9   \n";
   std::cout << "     |     |      \n\n";
-  
 }
 
 bool is_winner() {
 
   bool winner = false;
-  
+
   // rows
   if ((grid[0] == grid[1]) && (grid[1] == grid[2]) && grid[0] != " ") {
     winner = true;
@@ -47,18 +45,16 @@ bool is_winner() {
     winner = true;
   } else if ((grid[2] == grid[5]) && (grid[2] == grid[8]) && grid[2] != " ") {
     winner = true;
-  } 
-  
+  }
+
   // diagonals
   else if ((grid[0] == grid[4]) && (grid[0] == grid[8]) && grid[0] != " ") {
     winner = true;
-  }
-  else if ((grid[2] == grid[4]) && (grid[2] == grid[6]) && grid[2] != " ") {
+  } else if ((grid[2] == grid[4]) && (grid[2] == grid[6]) && grid[2] != " ") {
     winner = true;
   }
 
   return winner;
-
 }
 
 bool full_board() {
@@ -69,13 +65,10 @@ bool full_board() {
 
     if (grid[1] == " ") {
       full = false;
-      
     }
-    
   }
 
   return full;
-  
 }
 
 void create_grid() {
@@ -98,3 +91,14 @@ void create_grid() {
   std::cout << "     |     |     \n\n";
 }
 
+/* set position function using whil loop, check if positon is a number.
+Also check if position has already been chosen.  */
+
+// Create update board function, figure out whos playing and give them an "X" or
+// "O"
+
+// Create chand player function
+
+// Create take turn function
+
+// Create end game function
