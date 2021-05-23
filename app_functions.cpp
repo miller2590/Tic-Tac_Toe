@@ -91,13 +91,40 @@ void create_grid() {
   std::cout << "     |     |     \n\n";
 }
 
-/* set position function using whil loop, check if positon is a number.
+/* set position function using while loop, check if positon is a number.
 Also check if position has already been chosen.  */
+void change_position() {}
 
-// Create update board function, figure out whos playing and give them an "X" or
-// "O"
+void update_board() {
 
-// Create chand player function
+  if (player % 2 == 1) {
+
+    grid[position - 1] = "x";
+
+  }
+
+  else {
+
+    grid[position - 1] = "O";
+  }
+}
+
+// Create change player function
+void change_player() {
+
+  if (player == 1) {
+
+    player ++;
+    
+  }
+  
+  else {
+
+    player --;
+    
+  }
+  
+}
 
 // Create take turn function
 
